@@ -1,0 +1,122 @@
+[
+  {
+    "Name": "Mars",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "Mars is the fourth planet from the Sun and is only ahead of Mercury in the Solar System in size. Its size is equal to half the size of the Earth, or rather 53%. But this is a real desert, so it has the same amount of dry land as our planet. Therefore, its enormity can be judged only by what you rate.",
+    "Size": 6779.0,
+    "ImagePath": "/Resources/Mars.png"
+  },
+  {
+    "Name": "Earth",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "The Earth is the third planet from the Sun of the Solar System, the only planet on which life is known, the home of humanity. Earth belongs to the terrestrial planets and is the largest of these planets in the solar system.",
+    "Size": 12742.0,
+    "ImagePath": "/Resources/Earth.png"
+  },
+  {
+    "Name": "Venus",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "The planet Venus is our closest neighbor. Venus comes closer to Earth than any other planet, at a distance of 40 million km. The atmosphere of the planet extends to an altitude of 5,500 km, and its density is 35 times greater than that of the Earth.",
+    "Size": 6051.0,
+    "ImagePath": "/Resources/Venus.png"
+  },
+  {
+    "Name": "Jupiter",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "The fifth largest planet in the solar system known since ancient times is Jupiter. The gas giant got its name in honor of the ancient Roman god Jupiter, similar to Zeus the Thunderer among the Greeks.",
+    "Size": 139820.0,
+    "ImagePath": "/Resources/Jupiter.png"
+  },
+  {
+    "Name": "Saturn",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "Saturn is the sixth planet from the Sun and the second largest planet in the Solar System after Jupiter. Saturn, as well as Jupiter, Uranus and Neptune, are classified as gas giants. Saturn is named after the Roman god of agriculture.",
+    "Size": 58232.0,
+    "ImagePath": "/Resources/Saturn.png"
+  },
+  {
+    "Name": "Mercury",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "Mercury is the planet of the Solar System nearest to the Sun, the smallest of the terrestrial planets. Named in honor of the Roman god of commerce - the fast Mercury, because it moves faster than other planets in the celestial sphere.",
+    "Size": 4879.0,
+    "ImagePath": "/Resources/Mercury.png"
+  },
+  {
+    "Name": "Uranus",
+    "System": "Solar System",
+    "Galaxy": "Milky Way",
+    "Description": "Uranus revolves around the Sun at a distance of 2,871 million km. Rotation around its axis takes about 17 hours, which is less than the rotation of Jupiter and Saturn. The mass of the planet is fifteen masses of the Earth.",
+    "Size": 25362.0,
+    "ImagePath": "/Resources/Uranus.png"
+  },
+  {
+    "Name": "Neptune",
+    "System": "Solar Sytem",
+    "Galaxy": "Milky Way",
+    "Description": "Neptune is the fourth largest and eighth largest planet from the Sun. He was named after the Roman sea god, similar to Poseidon among the Greeks. After the discovery of Uranus, scientists around the world began to argue, because the trajectory of its orbit was not entirely consistent with the worldwide law of Newton.",
+    "Size": 24622.0,
+    "ImagePath": "/Resources/Neptune.png"
+  },
+  {
+    "Name": "Epsilon Eridani",
+    "System": "Eridan",
+    "Galaxy": "Milky Way",
+    "Description": "Epsilon Eridan b or Aegir is an exoplanet found in the Sun-like star Epsilon Eridan, located about 10.5 light-years from the solar system in the constellation Eridanus.",
+    "Size": 511340.0,
+    "ImagePath": "/Resources/Epsilon Eridani.png"
+  },
+  {
+    "Name": "COROT-7b",
+    "System": "Unicorn",
+    "Galaxy": "Milky Way",
+    "Description": "Planet CoRoT-7b, the first outside of our solar system, where a rocky surface is found. The temperature on the planet is 2200 degrees Celsius. This volcanic tyrant scatters stones (one of its sides is a vast lava ocean) and, possibly, is the core of a vanished gas giant.",
+    "Size": 10009.0,
+    "ImagePath": "/Resources/CoRoT-7b.png"
+  },
+  {
+    "Name": "OGLE-2005-BLG-390L b",
+    "System": "Scorpio",
+    "Galaxy": "Milky Way",
+    "Description": "OGLE-2005-BLG-390L b is the coldest and most distant planet from us. This planet is 5.5 times heavier than Earth, and on the rocky surface of its -220 degrees Celsius. It rotates around a red dwarf and is 28,000 light years away.",
+    "Size": 10767.0,
+    "ImagePath": "/Resources/OGLE-2005-BLG-390L b.png"
+  },
+  {
+    "Name": "WASP-12b",
+    "System": "Avriga",
+    "Galaxy": "Milky Way",
+    "Description": "The planet WASP-12b is the hottest ever discovered (about 2200 degrees Celsius), and has the smallest rotation orbit relative to its star. The year here is equal to Earth Day. WASP-12b is a gaseous planet, about 1.5 times heavier and almost twice the size of Jupiter. The planet is located about 870 light years from Earth.",
+    "Size": 127970.0,
+    "ImagePath": "/Resources/WASP-12b.png"
+  },
+  {
+    "Name": "Coku Тау 4",
+    "System": " Taurus",
+    "Galaxy": "Milky Way",
+    "Description": "The youngest known exoplanet is Coku Tau 4, less than 1 million years old, and it is located about 420 light-years from Earth. The planet is located in the center of the dust disk, with a diameter of 10 times the orbit of the Earth's rotation around the Sun.",
+    "Size": 14900.0,
+    "ImagePath": "/Resources/Coku Тау 4.png"
+  },
+  {
+    "Name": "HAT-P-1",
+    "System": "Lizard",
+    "Galaxy": "Milky Way",
+    "Description": "The lightest planet HAT-P-1, has the largest radius, coupled with the lowest density (its density is less than the density of water), among known exoplanets. It is located 450 light years from Earth.",
+    "Size": 94298.0,
+    "ImagePath": "/Resources/HAT-P-1.png"
+  },
+  {
+    "Name": "XO-3b",
+    "System": "Giraffe",
+    "Galaxy": "Milky Way",
+    "Description": "The most tilted planet is XO-3b. Most planets rotate in a plane corresponding to the equator of their parent star. But XO-3b has a completely crazy 37 degree deviation.",
+    "Size": 739820.0,
+    "ImagePath": "/Resources/XO-3b.png"
+  }
+]
