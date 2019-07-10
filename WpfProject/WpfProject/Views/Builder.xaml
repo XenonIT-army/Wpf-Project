@@ -1,0 +1,600 @@
+﻿<Page x:Class="WpfProject.Views.Builder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfProject.Views"
+      xmlns:vm="clr-namespace:WpfProject.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       DataContext="{Binding Builder,Source={StaticResource Locator}}"
+      Title="BuilderPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:LocalizeDictionary.OutputMissingKeys="True"
+        lex:ResxLocalizationProvider.DefaultAssembly="WpfProject"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        
+        <Grid Name="BaseGrid" Grid.Column="0" ></Grid>
+        
+        <Grid  Grid.Column="2" Width="{Binding ElementName=CloseEdit, Path=ActualWidth}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Style="{x:Null}" Command="{Binding EditImageCommand}">
+                <Image Cursor="Hand"
+                    
+                   Source="{Binding  ElementName=EditItems, Path=SelectedItem.ImagePath}">
+                </Image>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <StackPanel Grid.Row="1" Margin="30 0 30 0">
+
+
+                <TextBox  Margin="0 5 0 5" Text="{Binding ElementName=EditItems, Path=SelectedItem.Name}"
+                         
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateName}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding ElementName=EditItems, Path=SelectedItem.System}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateSystem}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding ElementName=EditItems, Path=SelectedItem.Galaxy}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateGalaxy}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding ElementName=EditItems, Path=SelectedItem.Size}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateSize}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding ElementName=EditItems, Path=SelectedItem.Description}"
+                        VerticalAlignment="Top"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                            materialDesign:HintAssist.Hint="{lex:Loc ToCreateDescription}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+               
+                <Button Grid.Column="0" Margin="0 5 30 5" Content="{lex:Loc ButtonOk}"></Button>
+
+                    <Button Margin="30 5 0 5" Grid.Column="1" 
+                        Command="{Binding DeletePlanetCommand}"
+                        Content="{lex:Loc DeletePlanet}"
+                                          >
+                </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+
+
+
+        <Grid Grid.Column="1">
+            <Grid Name="OpenEdit">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                            Height="70*" />
+                    <RowDefinition
+                            Height="30*" />
+                </Grid.RowDefinitions>
+                <Grid Name="IconEdit" Grid.Row="0" >
+                    <materialDesign:PackIcon 
+                            Height="{Binding ElementName=Icon, Path=Height}"
+                             Width="{Binding ElementName=Icon, Path=Width}"
+                            Kind="CircleEditOutline"
+                           
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" />
+                </Grid>
+                <StackPanel
+                            Grid.Row="1"
+                             HorizontalAlignment="Center"
+                              >
+                    <TextBlock FontSize="14" HorizontalAlignment="Center" Text="{lex:Loc ToEditString1}">
+                    </TextBlock>
+                    <TextBlock FontSize="14"
+                            HorizontalAlignment="Center"
+                            Margin="0 2 0 10" Text="{lex:Loc ToEditString2}">
+                    </TextBlock>
+                    <Grid 
+                           >
+                        <Button Name="OpenButtonEdit"
+                                Style="{DynamicResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonProgressAssist.Value="-1"
+                                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                
+                                Content="{lex:Loc ToEditButton}"
+                                 Margin="30 4 30 0"
+                                />
+                    </Grid>
+
+                </StackPanel>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click" SourceName="OpenButtonEdit">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                                        Storyboard.TargetName="OpenEdit"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=OpenEdit,Path=ActualWidth}" 
+                                                        To="0" 
+                                                        Duration="0:0:0:0.5" 
+                                                         
+                                                      />
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                                        Storyboard.TargetName="CloseEdit"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=CloseEdit,Path=ActualWidth}"
+                                                        To="{Binding ElementName=BaseGrid,Path=ActualWidth}" 
+                                                        Duration="0:0:0:0.5" 
+                                                         
+                                                        />
+                            </Storyboard>
+                        </BeginStoryboard>
+
+                    </EventTrigger>
+
+                </Grid.Triggers>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Name="CloseEdit"  Grid.Column="1" Width="0">
+            
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="80*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="10*" />
+                    <ColumnDefinition
+                            Width="60*" />
+                        <ColumnDefinition
+                            Width="30*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="2" Name="CloseEditButton" Margin="0 0 10 0"
+                            Command="{Binding CloseCommand}" 
+                                Content="{lex:Loc ButtonExit}"/>
+                    <Button  Margin="10 0 0 0" Grid.Column="0"
+                        Style="{DynamicResource MaterialDesignToolButton}"
+                       >
+                    <materialDesign:PackIcon
+                        Kind="Magnify"
+                            Opacity=".56" />
+                    </Button>
+
+                <TextBox  Grid.Column="1"
+                    Margin="0 0 30 0"
+                        Text="{Binding Search,UpdateSourceTrigger=PropertyChanged}"
+                            BorderThickness="1"
+                          materialDesign:HintAssist.Hint="{lex:Loc SearchEditPlanet}"
+                            VerticalAlignment="Center">
+                </TextBox>
+
+            </Grid>
+
+                <Grid Grid.Row="1" >
+                    <ListBox  Name="EditItems" SelectedItem="{Binding SelectedPlanet}" ItemsSource="{Binding SearchPlanets}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate >
+                        <DataTemplate >
+                                <materialDesign:Card >
+                                        <Grid Cursor="Hand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="150"/>
+                                            <RowDefinition Height="auto" />
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"></ColumnDefinition>
+                                            <ColumnDefinition  Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Name="GridImage" Grid.Row="0" Grid.Column="0">
+                                            <Image HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Name="PlanetImage" Grid.Row="0" Grid.Column="0"
+                                            Source="{Binding ImagePath}"
+                                        Height="140"
+                                        Width="196"
+                                           
+                                            Stretch="Uniform">
+                                                <Image.Triggers>
+                                                    <EventTrigger RoutedEvent="Image.MouseEnter">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation 
+                                                        Storyboard.TargetName="PlanetImage"
+                                                        Storyboard.TargetProperty="(Image.Height)" 
+                                                             
+                                                        From="{Binding ElementName=PlanetImage,Path=Height}" To="700" 
+                                                        Duration="0:0:0:6" 
+                                                         AutoReverse="True"  
+                                                        FillBehavior="Stop"/>
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation 
+                                                        Storyboard.TargetName="PlanetImage"
+                                                        Storyboard.TargetProperty="(Image.Width)" 
+                                                             
+                                                        From="{Binding ElementName=PlanetImage,Path=Width}" To="700" 
+                                                        Duration="0:0:0:6" 
+                                                         AutoReverse="True"  
+                                                        FillBehavior="Stop"/>
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+
+                                                    <EventTrigger RoutedEvent="Image.MouseLeave">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation 
+                                                        Storyboard.TargetName="PlanetImage"
+                                                        Storyboard.TargetProperty="(Image.Height)" 
+                                                             
+                                                        From="{Binding ElementName=PlanetImage,Path=ActualHeight}" To="{Binding ElementName=GridImage,Path=Height}" 
+                                                         Duration="0:0:0:0.1" 
+                                                          
+                                                       />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation 
+                                                        Storyboard.TargetName="PlanetImage"
+                                                        Storyboard.TargetProperty="(Image.Width)" 
+                                                             
+                                                        From="{Binding ElementName=PlanetImage,Path=ActualWidth}" To="{Binding ElementName=GridImage,Path=Width}" 
+                                                        Duration="0:0:0:0.1"
+                                                        />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+
+                                                    </EventTrigger>
+
+                                                </Image.Triggers>
+
+
+                                            </Image>
+                                        </Grid>
+
+
+
+                                        <StackPanel
+                                            Grid.Row="1" Grid.Column="0">
+                                            <TextBlock 
+                                                FontSize="16">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="5,5,5,0"  Grid.Column="0" Text="{lex:Loc PlanetName}"></TextBlock>
+                                            <TextBlock Text="{Binding Name}" Margin="5,5,5,0" Grid.Column="1"></TextBlock>
+                                           
+                                        </Grid>
+                                            
+                                    </TextBlock>
+                                            <TextBlock 
+                                        FontSize="16"
+                                        >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="5,5,5,0"  Grid.Column="0" Text="{lex:Loc PlanetSystem}"></TextBlock>
+                                            <TextBlock Text="{Binding System}" Margin="5,5,5,0" Grid.Column="1"></TextBlock>
+                                           
+                                        </Grid>
+                                            
+                                    </TextBlock>
+                                            <TextBlock 
+                                        FontSize="16"
+                                        >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                               
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="5,5,5,0"  Grid.Column="0" Text="{lex:Loc PlanetGalaxy}"></TextBlock>
+                                            <TextBlock Text="{Binding Galaxy}" Margin="5,5,5,0" Grid.Column="1"></TextBlock>
+                                        
+                                        </Grid>
+                                            
+                                    </TextBlock>
+                                            <TextBlock 
+                                       
+                                        FontSize="16"
+                                       >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="5,5,5,5"  Grid.Column="0" Text="{lex:Loc PlanetSize}"></TextBlock>
+                                            <TextBlock Text="{Binding Size}" Margin="5,5,5,5" Grid.Column="1"></TextBlock>
+                                            <TextBlock Margin="5,5,5,5" Grid.Column="2" Text="{lex:Loc PlanetSizeKm}"></TextBlock>
+                                        </Grid>
+                                            
+                                    </TextBlock>
+
+                                        </StackPanel>
+                                    </Grid>
+                                </materialDesign:Card>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                        <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+
+                </Grid>
+            </Grid>
+            
+            
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Button.Click" SourceName="CloseEditButton" >
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="OpenEdit"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=OpenEdit,Path=Width }" 
+                                                        To="{Binding ElementName=CloseEdit,Path=Width}" 
+                                                        Duration="0:0:0:0.5" 
+                                                       
+                                                      />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="CloseEdit"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=CloseEdit,Path=ActualWidth}"
+                                                        To="0" 
+                                                        Duration="0:0:0:0.5" 
+                                                        
+                                                        />
+                        </Storyboard>
+                    </BeginStoryboard>
+
+                </EventTrigger>
+
+            </Grid.Triggers>
+
+        </Grid>
+
+
+        <Grid Name="OpenCreate" Width="{Binding ElementName=BaseGrid, Path=ActualWidth,UpdateSourceTrigger=PropertyChanged}"  Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="70*" />
+                        <RowDefinition
+                            Height="30*" />
+                    </Grid.RowDefinitions>
+                    <Grid Name="Icon" Grid.Row="0" >
+                        <materialDesign:PackIcon 
+                            Height="{Binding ElementName=Icon, Path=Height}"
+                             Width="{Binding ElementName=Icon, Path=Width}"
+                             Kind="GoogleEarth"
+                           
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" />
+                    </Grid>
+                    <StackPanel
+                            Grid.Row="1"
+                             HorizontalAlignment="Center"
+                              >
+                <TextBlock FontSize="14" HorizontalAlignment="Center" Text="{lex:Loc BuilderString1}">
+                               
+                        </TextBlock>
+                        <TextBlock FontSize="14"
+                            HorizontalAlignment="Center"
+                            Margin="0 2 0 10" Text="{lex:Loc BuilderString2}">
+                              
+                        </TextBlock>
+                        <Grid 
+                           >
+                            <Button Name="OpenButton"
+                                Style="{DynamicResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonProgressAssist.Value="-1"
+                                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                
+                                Content="{lex:Loc ToCreateButton}"
+                                 Margin="30 4 30 0"
+                                />
+                        </Grid>
+                       
+                    </StackPanel>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Button.Click" SourceName="OpenButton">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="OpenCreate"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=OpenCreate,Path=ActualWidth}" 
+                                                        To="0" 
+                                                        Duration="0:0:0:0.5" 
+                                                         
+                                                      />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="CloseCreate"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=CloseCreate,Path=ActualWidth}"
+                                                        To="{Binding ElementName=BaseGrid,Path=ActualWidth,Mode=OneWay}" 
+                                                        Duration="0:0:0:0.5" 
+                                                         
+                                                        />
+                        </Storyboard>
+                    </BeginStoryboard>
+
+                </EventTrigger>
+
+            </Grid.Triggers>
+        </Grid>
+          
+
+        <Grid Name="CloseCreate"  Grid.Column="0"  
+                      Width="0">
+                    
+                        <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        
+                        </Grid.RowDefinitions>
+
+
+            <Button Cursor="Hand" Grid.Row="0" Style="{x:Null}" Command="{Binding AddImageCommand}">
+                <Image 
+                    
+                   Source="{Binding ImageAddPath}">
+                
+                </Image>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <StackPanel Grid.Row="1" Margin="30 0 30 0">
+
+
+                <TextBox  Margin="0 5 0 5" Text="{Binding Planet.Name}"
+                         
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateName}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding Planet.System}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateSystem}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding Planet.Galaxy}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateGalaxy}"
+                     />
+                <TextBox Margin="0 5 0 5" Text="{Binding  Input, UpdateSourceTrigger=PropertyChanged}"
+                     materialDesign:HintAssist.Hint="{lex:Loc ToCreateSize}"
+                     />
+
+
+                <TextBox Margin="0 5 0 5" Text="{Binding Planet.Description}"
+                        VerticalAlignment="Top"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                            materialDesign:HintAssist.Hint="{lex:Loc ToCreateDescription}"/>
+               
+
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Command="{Binding AddPlanetCommand}"   Margin="30 20 30 0"
+                                Content="{lex:Loc ButtonCreate}"/>
+
+                    <Button Name="CloseButton" 
+                            Command="{Binding CloseCommand}" Grid.Column="1" Margin="30 20 30 0" 
+                                Content="{lex:Loc ButtonExit}"/>
+                </Grid>
+
+            </StackPanel>
+
+           
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Button.Click" SourceName="CloseButton" >
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="OpenCreate"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=OpenCreate,Path=ActualWidth }" 
+                                                        To="{Binding ElementName=BaseGrid,Path=ActualWidth,Mode=OneWay}" 
+                                                        Duration="0:0:0:0.5" 
+                                                       
+                                                      />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                                        Storyboard.TargetName="CloseCreate"
+                                                        Storyboard.TargetProperty="(Grid.Width)" 
+                                                             
+                                                        From="{Binding ElementName=CloseCreate,Path=ActualWidth}"
+                                                        To="0" 
+                                                        Duration="0:0:0:0.5" 
+                                                        
+                                                        />
+                        </Storyboard>
+                    </BeginStoryboard>
+
+                </EventTrigger>
+
+            </Grid.Triggers>
+
+
+        </Grid>
+
+    </Grid>
+</Page>

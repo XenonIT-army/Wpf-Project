@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BuilderString1" xml:space="preserve">
+    <value>Создайте новую планету</value>
+  </data>
+  <data name="BuilderString2" xml:space="preserve">
+    <value>нашего мира!</value>
+  </data>
+  <data name="ButtonCreate" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="ButtonExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="DeletePlanet" xml:space="preserve">
+    <value>Удалить Планету</value>
+  </data>
+  <data name="DescriptionString" xml:space="preserve">
+    <value>Описание планеты</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Мир Планет</value>
+  </data>
+  <data name="MainButtonBuilder" xml:space="preserve">
+    <value>Создание Планет</value>
+  </data>
+  <data name="MainButtonCollection" xml:space="preserve">
+    <value>Коллекция Планет</value>
+  </data>
+  <data name="MainButtonHome" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="MainButtonSettings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="PlanetDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="PlanetGalaxy" xml:space="preserve">
+    <value>Галактика :</value>
+  </data>
+  <data name="PlanetImagePath" xml:space="preserve">
+    <value>Путь к изображению</value>
+  </data>
+  <data name="PlanetName" xml:space="preserve">
+    <value>Имя :</value>
+  </data>
+  <data name="PlanetSearch" xml:space="preserve">
+    <value>Найти Планету :</value>
+  </data>
+  <data name="PlanetSelection" xml:space="preserve">
+    <value>Выбрать Планету :</value>
+  </data>
+  <data name="PlanetSize" xml:space="preserve">
+    <value>Размер :</value>
+  </data>
+  <data name="PlanetSizeKm" xml:space="preserve">
+    <value>км</value>
+  </data>
+  <data name="PlanetSorted" xml:space="preserve">
+    <value>Отсортировать Планеты :</value>
+  </data>
+  <data name="PlanetSystem" xml:space="preserve">
+    <value>Система :</value>
+  </data>
+  <data name="SearchEditPlanet" xml:space="preserve">
+    <value>Найдите планету и нажмите на нее</value>
+  </data>
+  <data name="SortedGalaxy" xml:space="preserve">
+    <value>Галактика</value>
+  </data>
+  <data name="SortedName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SortedSize" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="SortedSystem" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="StringLanguage" xml:space="preserve">
+    <value>Язык :</value>
+  </data>
+  <data name="TextBoxHome1" xml:space="preserve">
+    <value>Добро пожаловать в приложение «Мир Планет»!</value>
+  </data>
+  <data name="TextBoxHome2" xml:space="preserve">
+    <value>Космос в переводе с греческого языка означает мир, строение, вселенная, мироздание.</value>
+  </data>
+  <data name="TextBoxHome3" xml:space="preserve">
+    <value>А выражение «слетать в космос», «побывать в космосе», «вылетел в открытый космос» уже давно привычно вошли в нашу жизнь.</value>
+  </data>
+  <data name="TextBoxHome4" xml:space="preserve">
+    <value>Итак, вы хотите посмотреть на планеты нашей вселенной в режиме оффлайн?</value>
+  </data>
+  <data name="TextBoxHome5" xml:space="preserve">
+    <value>Вы попали по правильному адресу!</value>
+  </data>
+  <data name="TextBoxHome6" xml:space="preserve">
+    <value>Здесь вы можете сравнить размеры планет,название систем и галактик в которых они находяться.</value>
+  </data>
+  <data name="TextBoxHome7" xml:space="preserve">
+    <value>В приложении реализована возможность создания и редактирования существующих планет.</value>
+  </data>
+  <data name="TextBoxHome8" xml:space="preserve">
+    <value>Создавайте свои планеты, придумывайте им названия,размещайте их в своих галактиках.</value>
+  </data>
+  <data name="TextBoxHome9" xml:space="preserve">
+    <value>Когда-нибудь наступит время, когда человек плотно освоит космос, и наш человек будет бороздить просторы вселенной, как у себя дома на планете Земля.</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема :</value>
+  </data>
+  <data name="ToCreateButton" xml:space="preserve">
+    <value>Начать Создание</value>
+  </data>
+  <data name="ToCreateDescription" xml:space="preserve">
+    <value>Описание Планеты</value>
+  </data>
+  <data name="ToCreateGalaxy" xml:space="preserve">
+    <value>Галактика Планеты</value>
+  </data>
+  <data name="ToCreateName" xml:space="preserve">
+    <value>Название Планеты</value>
+  </data>
+  <data name="ToCreateSize" xml:space="preserve">
+    <value>Размер Планеты</value>
+  </data>
+  <data name="ToCreateSystem" xml:space="preserve">
+    <value>Система Палнеты</value>
+  </data>
+  <data name="ToEditButton" xml:space="preserve">
+    <value>Начать Редактирование</value>
+  </data>
+  <data name="ToEditString1" xml:space="preserve">
+    <value>Редактируйте планеты</value>
+  </data>
+  <data name="ToEditString2" xml:space="preserve">
+    <value>нашего мира!</value>
+  </data>
+</root>
