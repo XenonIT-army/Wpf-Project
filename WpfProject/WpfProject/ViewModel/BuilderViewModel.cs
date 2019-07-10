@@ -63,7 +63,7 @@ namespace WpfProject.ViewModel
         }
         public ObservableCollection<Planet> SearchPlanets
         {
-            get => searchPlanets = new ObservableCollection<Planet>(planets);
+            get => searchPlanets;
             set
             {
                 searchPlanets = value;
@@ -107,11 +107,6 @@ namespace WpfProject.ViewModel
             set
             {
                 _search = value;
-
-                if (Search == "")
-                    SearchPlanets = planets;
-                else
-                    SearchPlanets = search.SearchPlanet(planets, _search);
                 Notify();
             }
         }
@@ -124,7 +119,26 @@ namespace WpfProject.ViewModel
         private ICommand _addPlanetCommand;
         private ICommand _closeCommand;
         private ICommand _deletePlanetCommand;
+        private ICommand _searchPlanetCommand;
 
+        public ICommand SearchPlanetCommand
+        {
+            get
+            {
+                if (_searchPlanetCommand == null)
+                {
+                    _searchPlanetCommand = new GalaSoft.MvvmLight.Command.RelayCommand(() =>
+                    {
+                        if (Search == "")
+                            SearchPlanets = planets;
+                        else
+                            SearchPlanets = search.SearchPlanet(planets, _search);
+                    });
+                }
+                return _searchPlanetCommand;
+            }
+            set { _searchPlanetCommand = value; }
+        }
 
         public ICommand DeletePlanetCommand
         {
