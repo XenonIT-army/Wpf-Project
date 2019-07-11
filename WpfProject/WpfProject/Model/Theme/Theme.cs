@@ -13,17 +13,13 @@ namespace WpfProject.Model.Theme
         public List<ResourceDictionary> darkTheme = new List<ResourceDictionary>
         {
             new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml")},
-            new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml")},
             new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml")},
-            new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml")},
         };
 
         public List<ResourceDictionary> lightTheme = new List<ResourceDictionary>
         {
             new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml")},
-            new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml")},
             new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml")},
-            new ResourceDictionary {Source=new Uri(@"pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml")},
         };
         public void AddTheme()
         {

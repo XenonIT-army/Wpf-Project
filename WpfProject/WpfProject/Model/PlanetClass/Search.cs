@@ -12,16 +12,25 @@ namespace WpfProject.Model.PlanetClass
         private ObservableCollection<Planet> searchPlanets = new ObservableCollection<Planet>();
         public ObservableCollection<Planet> SearchPlanet(ObservableCollection<Planet> planets, string search)
         {
-            foreach (var planet in planets)
+            try
             {
-                if (planet.Name.Contains(search) == true|| 
-                    planet.System.Contains(search) == true || 
-                    planet.Galaxy.Contains(search) == true ||
-                    Convert.ToString(planet.Size).Contains(search) == true)
-                {
 
-                    searchPlanets.Add(planet);
+
+                foreach (var planet in planets)
+                {
+                    if (planet.Name.Contains(search) == true ||
+                        planet.System.Contains(search) == true ||
+                        planet.Galaxy.Contains(search) == true ||
+                        Convert.ToString(planet.Size).Contains(search) == true)
+                    {
+
+                        searchPlanets.Add(planet);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                return planets;
             }
 
             planets = searchPlanets;
